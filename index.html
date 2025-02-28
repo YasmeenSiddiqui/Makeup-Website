@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENZA - Beauty Beyond Imagination</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500&family=Poppins:wght@300;400;500;600;700&family=Rubik+Vinyl&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Atma", system-ui;
+            font-weight: 500;
+            background: linear-gradient(135deg, #fff, #ffccda, #e6e6fa, #b3e0ff);
+            background-size: 300% 300%;
+            animation: backgroundAnimation 10s ease infinite;
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            transition: background 0.5s ease;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #ff99cc;
+            border-radius: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #b3e0ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 240, 245, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 3px solid #ff99cc;
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-family: "Rubik Vinyl", system-ui;
+            font-size: 36px;
+            color: #ff66b3;
+            text-shadow: 2px 2px 15px rgba(255, 102, 179, 0.5);
+        }
+
+        p {
+            font-family: "Atma", system-ui;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #ff3385;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff66b3;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff66b3, #b3e0ff);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%; /* Make buttons full width */
+            max-width: 150px; /* Set a max width for uniformity */
+            margin-top: 10px; /* Add some space above the button */
+        }
+
+        .btn:hover {
+            background: #ff3385;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to the next line */
+            justify-content: center; /* Center the products */
+            margin-top: 20px;
+        }
+
+        .product {
+            margin: 20px;
+            text-align: center;
+            width: 200px; /* Set a fixed width for each product */
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 2px dashed #ffb3d9;
+        }
+
+        .cart-item img {
+            width: 70px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #ff3385;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .broken-heart {
+            color: #ff3385;
+            font-size: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="RENZA Logo" class="logo" style="width: 40px; height: 45px;">
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('products')">Products</a>
+            <a href="#" onclick="showSection('checkout')">Checkout</a>
+            <a href="#" onclick="showSection('thankyou')">Thank You</a>
+        </nav>
+    </header>
+
+    <div id="home" class="container">
+        <h1>Welcome to RENZA ✨</h1>
+        <p>Your dreamy makeup destination. Discover beauty beyond imagination!</p>
+        <button class="btn" onclick="showSection('about')">Learn More</button>
+    </div>
+
+    <div id="about" class="container hidden">
+        <h1>About RENZA</h1>
+<h1>______________________________________</h1>
+<br>
+<img src="logo.jpg" alt="RENZA Logo" class="logo" style="width: 200px; height: 200px;">
+        <p>
+            At <span class="highlight">RENZA</span>, we believe in bringing out your inner glow with beauty products that celebrate your unique radiance.
+            Our collections are crafted with love, blending luxury and softness to make every day feel like a fairytale.
+        </p>
+        <p>
+            From dreamy lip shades to enchanting eyeshadow palettes, RENZA is more than a brand — it's a world where makeup becomes magic.
+        </p>
+        <p>
+            <span class="highlight">Because you deserve to feel extraordinary. Always. 💖</span>
+        </p>
+        <button class="btn" onclick="showSection('home')">Back to Home</button>
+    </div>
+
+    <div id="products" class="container hidden">
+        <h1>Our Products ✨</h1>
+        <p>Explore our stunning range of makeup and skincare must-haves!</p>
+        <div class="product-list">
+            <div class="product">
+                <img src="pink.jpg" alt="Lipstick" style="width: 100%; border-radius: 10px;">
+                <h2>Romantic Pink Lipstick</h2>
+                <p>Price: 1799</p>
+                <button class="btn" onclick="addToCart('Romantic Pink Lipstick', 1799)">Add to Cart</button>
+            </div>
+            
+            <div class="product">
+                <img src="blush.png" alt="Blush" style="width: 100%; border-radius: 10px;">
+                <h2>Soft Glow Blush</h2>
+                <p>Price: 7999</p>
+                <button class="btn" onclick="addToCart('Soft Glow Blush', 7999)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="serum.jpg" alt="Serum" style="width: 100%; border-radius: 10px;">
+                <h2>Radiant Skin Serum</h2>
+                <p>Price: 3999</p>
+                <button class="btn" onclick="addToCart('Radiant Skin Serum', 3999)">Add to Cart</button>
+            </div>
+<div class="product">
+                <img src="love.jpg" alt="Eyeshadow" style="width: 100%; border-radius: 10px;">
+                <h2>Lavender Dream Eyeshadow</h2>
+                <p>Price: 2999</p>
+                <button class="btn" onclick="addToCart('Lavender Dream Eyeshadow', 2999)">Add to Cart</button>
+            </div>
+        </div>
+        <button class="btn" onclick="showSection('checkout')">Go to Checkout</button>
+    </div>
+
+    <div id="checkout" class="container hidden">
+        <h1>Checkout</h1>
+        <div class="cart" id="cart">
+            <h2>Your Cart 🛒</h2>
+            <ul id="cart-items"></ul>
+            <h2 id="total-price">Total: 0</h2>
+        </div>
+        <button class="btn" onclick="buyNow()">💖 Buy Now 💖</button>
+        <button class="btn" onclick="showSection('products')">Back to Products</button>
+    </div>
+
+    <div id="thankyou" class="container hidden">
+        <h1>Thank You for Shopping with RENZA! 💖</h1>
+        <p>We hope you loved your experience. Please visit us again for more magical makeup and skincare finds!</p>
+        <button class="btn" onclick="showSection('home')">Return to Home</button>
+    </div>
+
+    <script>
+        const cartItems = [];
+        let totalPrice = 0;
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function addToCart(product, price) {
+            cartItems.push(product);
+            totalPrice += price;
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartList = document.getElementById('cart-items');
+            cartList.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'cart-item';
+                
+                // Create an image element for the product
+                const img = document.createElement('img');
+                img.src = getImageSrc(item);
+                img.alt = item;
+
+                listItem.appendChild(img);
+                listItem.appendChild(document.createTextNode(item));
+
+                const removeButton = document.createElement('button');
+                removeButton.innerHTML = '💔'; // Broken heart icon for removing
+                removeButton.className = 'remove-btn';
+                removeButton.onclick = () => removeFromCart(index);
+                listItem.appendChild(removeButton);
+
+                cartList.appendChild(listItem);
+            });
+            document.getElementById('total-price').textContent = `Total: ${totalPrice}`;
+        }
+
+        function removeFromCart(index) {
+            const itemPrice = getItemPrice(cartItems[index]);
+            cartItems.splice(index, 1);
+            totalPrice -= itemPrice;
+            renderCart();
+        }
+
+        function getItemPrice(item) {
+            switch (item) {
+                case 'Romantic Pink Lipstick':
+                    return 1799;
+                case 'Lavender Dream Eyeshadow':
+                    return 2999;
+                case 'Soft Glow Blush':
+                    return 7999;
+                case 'Radiant Skin Serum':
+                    return 3999;
+                default:
+                    return 0;
+            }
+        }
+
+        function getImageSrc(item) {
+            switch (item) {
+                case 'Romantic Pink Lipstick':
+                    return 'pink.jpg';
+                case 'Lavender Dream Eyeshadow':
+                    return 'love.jpg';
+                case 'Soft Glow Blush':
+                    return 'blush.png';
+                case 'Radiant Skin Serum':
+                    return 'serum.jpg';
+                default:
+                    return '';
+            }
+        }
+
+        function buyNow() {
+            showSection('thankyou');
+        }
+    </script>
+</body>
+</html>
